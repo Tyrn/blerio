@@ -1,6 +1,6 @@
 {
-    "name": "stream_provider_ble",
-    "short_name": "stream_provider_ble",
+    "name": "blerio",
+    "short_name": "blerio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
