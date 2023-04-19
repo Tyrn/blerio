@@ -84,15 +84,16 @@ class __DeviceListState extends State<_DeviceList> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                    child: const Text('Scan'),
-                    onPressed: !widget.scannerState.scanIsInProgress
-                        ? () => widget.startScan([])
-                        : null),
+                  onPressed: !widget.scannerState.scanIsInProgress
+                      ? () => widget.startScan([])
+                      : null,
+                  child: const Text('Scan'),
+                ),
                 ElevatedButton(
-                  child: const Text('Stop'),
                   onPressed: widget.scannerState.scanIsInProgress
                       ? widget.stopScan
                       : null,
+                  child: const Text('Stop'),
                 ),
               ],
             ),
