@@ -107,7 +107,7 @@ class _DeviceInteractorState extends State<DeviceInteractor> {
                   }
                   return const Text('No data yet');
                 })
-            : const Text('Stream not initalized')
+            : const Text('Stream not initialized')
       ],
     );
   }
