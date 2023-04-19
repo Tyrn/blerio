@@ -37,6 +37,7 @@ dependencies:
   flutter_reactive_ble: ^5.0.3
   provider: ^6.0.5
   intl: ^0.18.1
+  auto_route: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.1
   import_sorter: ^4.6.0
+  auto_route_generator: ^6.2.0
+  build_runner: ^2.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
