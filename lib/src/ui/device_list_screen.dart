@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 // Project imports:
 import 'package:blerio/src/ble/ble_device_connector.dart';
 import 'package:blerio/src/ble/ble_scanner.dart';
+import 'package:blerio/src/routes/routes.gr.dart';
 import 'package:blerio/src/ui/device_interactor_screen.dart';
 
 @RoutePage()
@@ -68,12 +69,14 @@ class __DeviceListState extends State<_DeviceList> {
                         onTap: () async {
                           widget.stopScan();
                           widget.deviceConnector.connect(device.id);
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DeviceInteractorScreen(
-                                    deviceId: device.id)),
-                          );
+                          await context.router
+                              .push(DeviceInteractorRoute(deviceId: device.id));
+                          // await Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => DeviceInteractorScreen(
+                          //           deviceId: device.id)),
+                          // );
                           widget.deviceConnector.disconnect(device.id);
                           widget.startScan([]);
                         },

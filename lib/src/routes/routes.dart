@@ -13,7 +13,7 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
     AutoRoute(
       path: '/',
-      page: BleStatusRoute.page,
+      page: HomeRoute.page,
       children: [
         AutoRoute(path: '', page: DeviceInteractorRoute.page),
         AutoRoute(path: '', page: DeviceListRoute.page),
