@@ -19,43 +19,43 @@ const _themeColor = Colors.lightGreen;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final _bleLogger = BleLogger();
-  final _ble = FlutterReactiveBle();
-  final _scanner = BleScanner(ble: _ble, logMessage: _bleLogger.addToLog); // S
-  final _monitor = BleStatusMonitor(_ble); // S
-  final _connector = BleDeviceConnector(
-    ble: _ble,
-    logMessage: _bleLogger.addToLog,
+  final bleLogger = BleLogger();
+  final ble = FlutterReactiveBle();
+  final scanner = BleScanner(ble: ble, logMessage: bleLogger.addToLog); // S
+  final monitor = BleStatusMonitor(ble); // S
+  final connector = BleDeviceConnector(
+    ble: ble,
+    logMessage: bleLogger.addToLog,
   ); // S
-  final _serviceDiscoverer = BleDeviceInteractor(
-    bleDiscoverServices: _ble.discoverServices,
-    readCharacteristic: _ble.readCharacteristic,
-    writeWithResponse: _ble.writeCharacteristicWithResponse,
-    writeWithOutResponse: _ble.writeCharacteristicWithoutResponse,
-    subscribeToCharacteristic: _ble.subscribeToCharacteristic,
-    logMessage: _bleLogger.addToLog,
+  final serviceDiscoverer = BleDeviceInteractor(
+    bleDiscoverServices: ble.discoverServices,
+    readCharacteristic: ble.readCharacteristic,
+    writeWithResponse: ble.writeCharacteristicWithResponse,
+    writeWithOutResponse: ble.writeCharacteristicWithoutResponse,
+    subscribeToCharacteristic: ble.subscribeToCharacteristic,
+    logMessage: bleLogger.addToLog,
   );
   runApp(
     MultiProvider(
       providers: [
-        Provider.value(value: _scanner),  // S
-        Provider.value(value: _monitor),  // S
-        Provider.value(value: _connector),  // S
-        Provider.value(value: _serviceDiscoverer),
-        Provider.value(value: _bleLogger),
+        Provider.value(value: scanner),  // S
+        Provider.value(value: monitor),  // S
+        Provider.value(value: connector),  // S
+        Provider.value(value: serviceDiscoverer),
+        Provider.value(value: bleLogger),
         StreamProvider<BleScannerState?>(
-          create: (_) => _scanner.state,  // S
+          create: (_) => scanner.state,  // S
           initialData: const BleScannerState(
             discoveredDevices: [],
             scanIsInProgress: false,
           ),
         ),
         StreamProvider<BleStatus?>(
-          create: (_) => _monitor.state,  // S
+          create: (_) => monitor.state,  // S
           initialData: BleStatus.unknown,
         ),
         StreamProvider<ConnectionStateUpdate>(
-          create: (_) => _connector.state,  // S
+          create: (_) => connector.state,  // S
           initialData: const ConnectionStateUpdate(
             deviceId: 'Unknown device',
             connectionState: DeviceConnectionState.disconnected,
