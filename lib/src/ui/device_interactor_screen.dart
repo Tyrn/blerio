@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:blerio/src/ble/ble_device_interactor.dart';
 
 class DeviceInteractorScreen extends StatelessWidget {

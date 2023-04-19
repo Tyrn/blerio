@@ -1,8 +1,12 @@
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
-import 'package:blerio/src/ble/reactive_state.dart';
 import 'package:meta/meta.dart';
+
+// Project imports:
+import 'package:blerio/src/ble/reactive_state.dart';
 
 class BleScanner implements ReactiveState<BleScannerState> {
   BleScanner({

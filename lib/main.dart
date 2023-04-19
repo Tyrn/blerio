@@ -1,13 +1,17 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
+import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:blerio/src/ble/ble_device_connector.dart';
 import 'package:blerio/src/ble/ble_device_interactor.dart';
 import 'package:blerio/src/ble/ble_scanner.dart';
 import 'package:blerio/src/ble/ble_status_monitor.dart';
 import 'package:blerio/src/ui/ble_status_screen.dart';
 import 'package:blerio/src/ui/device_list.dart';
-import 'package:provider/provider.dart';
-
 import 'src/ble/ble_logger.dart';
 
 const _themeColor = Colors.lightGreen;
