@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
 // Package imports:
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
@@ -8,6 +9,7 @@ import 'package:provider/provider.dart';
 // Project imports:
 import 'package:blerio/src/ble/ble_device_interactor.dart';
 
+@RoutePage()
 class DeviceInteractorScreen extends StatelessWidget {
   final String deviceId;
   const DeviceInteractorScreen({Key? key, required this.deviceId})
