@@ -11,13 +11,17 @@ class AppRouter extends $AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(
-      path: '/',
-      page: HomeRoute.page,
-      children: [
-        AutoRoute(path: '', page: DeviceInteractorRoute.page),
-        AutoRoute(path: '', page: DeviceListRoute.page),
-      ],
-    ),
-  ];
+        AutoRoute(
+          path: '/',
+          page: HomeRoute.page,
+        ),
+        AutoRoute(
+          path: '/interactor',
+          page: DeviceInteractorRoute.page,
+        ),
+        AutoRoute(
+          path: '/list',
+          page: DeviceListRoute.page,
+        ),
+      ];
 }

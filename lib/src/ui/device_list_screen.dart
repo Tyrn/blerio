@@ -71,12 +71,6 @@ class __DeviceListState extends State<_DeviceList> {
                           widget.deviceConnector.connect(device.id);
                           await context.router
                               .push(DeviceInteractorRoute(deviceId: device.id));
-                          // await Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => DeviceInteractorScreen(
-                          //           deviceId: device.id)),
-                          // );
                           widget.deviceConnector.disconnect(device.id);
                           widget.startScan([]);
                         },

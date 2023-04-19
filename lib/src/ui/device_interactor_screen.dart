@@ -91,7 +91,6 @@ class _DeviceInteractorState extends State<DeviceInteractor> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.pop(context);
                 context.router.pop();
               },
               child: const Text('disconnect'),
