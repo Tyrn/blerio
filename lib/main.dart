@@ -17,12 +17,12 @@ void main() {
 
   final _bleLogger = BleLogger();
   final _ble = FlutterReactiveBle();
-  final _scanner = BleScanner(ble: _ble, logMessage: _bleLogger.addToLog);
-  final _monitor = BleStatusMonitor(_ble);
+  final _scanner = BleScanner(ble: _ble, logMessage: _bleLogger.addToLog); // S
+  final _monitor = BleStatusMonitor(_ble); // S
   final _connector = BleDeviceConnector(
     ble: _ble,
     logMessage: _bleLogger.addToLog,
-  );
+  ); // S
   final _serviceDiscoverer = BleDeviceInteractor(
     bleDiscoverServices: _ble.discoverServices,
     readCharacteristic: _ble.readCharacteristic,
