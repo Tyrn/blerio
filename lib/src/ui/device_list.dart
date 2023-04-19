@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 import 'package:provider/provider.dart';
-import 'package:stream_provider_ble/src/ble/ble_device_connector.dart';
-import 'package:stream_provider_ble/src/ble/ble_scanner.dart';
-import 'package:stream_provider_ble/src/ui/device_interactor_screen.dart';
+import 'package:blerio/src/ble/ble_device_connector.dart';
+import 'package:blerio/src/ble/ble_scanner.dart';
+import 'package:blerio/src/ui/device_interactor_screen.dart';
 
 class DeviceListScreen extends StatelessWidget {
   const DeviceListScreen({Key? key}) : super(key: key);
