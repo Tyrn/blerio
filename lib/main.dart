@@ -42,24 +42,24 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        Provider.value(value: scanner), // S
-        Provider.value(value: monitor), // S
-        Provider.value(value: connector), // S
+        Provider.value(value: scanner),
+        Provider.value(value: monitor),
+        Provider.value(value: connector),
         Provider.value(value: serviceDiscoverer),
         Provider.value(value: bleLogger),
         StreamProvider<BleScannerState?>(
-          create: (_) => scanner.state, // S
+          create: (_) => scanner.state,
           initialData: const BleScannerState(
             discoveredDevices: [],
             scanIsInProgress: false,
           ),
         ),
         StreamProvider<BleStatus?>(
-          create: (_) => monitor.state, // S
+          create: (_) => monitor.state,
           initialData: BleStatus.unknown,
         ),
         StreamProvider<ConnectionStateUpdate>(
-          create: (_) => connector.state, // S
+          create: (_) => connector.state,
           initialData: const ConnectionStateUpdate(
             deviceId: 'Unknown device',
             connectionState: DeviceConnectionState.disconnected,
